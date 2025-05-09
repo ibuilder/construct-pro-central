@@ -1,13 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import MainLayout from '@/components/layout/MainLayout';
+import Dashboard from './Dashboard';
+import Projects from './Projects';
+import Partners from './Partners';
+import Items from './Items';
+import NotFound from './NotFound';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="partners" element={<Partners />} />
+        <Route path="items" element={<Items />} />
+        <Route path="deliveries" element={<Dashboard />} />
+        <Route path="schedule" element={<Dashboard />} />
+        <Route path="reports" element={<Dashboard />} />
+        <Route path="analytics" element={<Dashboard />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };
 
