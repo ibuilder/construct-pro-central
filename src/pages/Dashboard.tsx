@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Activity, Package, Truck, Users, Hammer, Calendar, FileText, Tag } from 'lucide-react';
 import StatCard from '@/components/dashboard/StatCard';
 import ProjectSummary from '@/components/dashboard/ProjectSummary';
 import DeliverySchedule from '@/components/dashboard/DeliverySchedule';
 
+// Define the data without 'as const' to keep it mutable
 const mockProjects = [
   {
     id: '1',
@@ -30,7 +30,7 @@ const mockProjects = [
     dueDate: 'Mar 20, 2025',
     budget: '$33.7M',
   },
-] as const;
+];
 
 const mockDeliveries = [
   {
@@ -68,7 +68,7 @@ const mockDeliveries = [
     supplier: 'ClimateControl Inc.',
     status: 'completed',
   },
-] as const;
+];
 
 const Dashboard = () => {
   return (
